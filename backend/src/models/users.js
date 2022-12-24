@@ -15,7 +15,9 @@ const createUser = (sequelize, DataTypes) => {
         User.hasMany(models.order, {    
             foreignKey: 'userId', as: 'orders'});
         
-        return User;
-    }};
+     
+    }
+    return User;
+};
 
 module.exports = createUser;

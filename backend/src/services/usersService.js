@@ -1,7 +1,8 @@
-const UserRepository = require('../models/users.js');
+const {user} = require('../models')
 
-const findAll = async (req, resp) => {
-    await UserRepository.findAll().then((users) => resp.json(users));
+const findAll = async () => {
+    const users = await user.findAll();
+    return users;
 }
 
-modeule.exports = {findAll};
+module.exports = {findAll};

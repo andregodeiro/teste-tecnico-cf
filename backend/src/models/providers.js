@@ -24,7 +24,7 @@ const createProvider = (sequelize, DataTypes) => {
         phoneNumber: DataTypes.STRING,
         situtation: DataTypes.STRING,
         situationDate: DataTypes.STRING,
-        cnpjId: {trype: DataTypes.INTEGER, foreignKey: true},
+        cnpjId: {type: DataTypes.INTEGER, foreignKey: true},
         email: DataTypes.STRING
     });
 

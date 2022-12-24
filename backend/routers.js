@@ -1,13 +1,13 @@
 const express = require('express');
 const orders = require('./src/controllers/ordersController.js');
+const users = require('./src/controllers/usersController.js')
 
+const routers = express.Router();
 
-const routes = express.Router();
-
-routes.get('/', (res, resp) => {
+routers.get('/', (res, resp) => {
     return res.json("OK!")
 });
 
-routes.get('/orders/:id', orders.findById)
-
-module.exports = { routes };
+routers.get('/users', users.findAll);
+routers.get('/orders/:id', orders.findById);
+module.exports = routers;

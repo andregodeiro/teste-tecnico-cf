@@ -17,7 +17,9 @@ const createCnpj = (sequelize, DataTypes) => {
             foreignKey:'cnpjId', as: 'providers'
         });
 
-        return Cnpj;
-    }};
+       
+    }
+    return Cnpj;
+};
 
 module.exports = createCnpj;

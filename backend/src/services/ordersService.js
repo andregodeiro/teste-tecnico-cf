@@ -1,10 +1,11 @@
 const {order, provider, buyer} = require('../models');
 
 const findById = async (id) => {
+  console.log(id)
     try {
         const orders = await order.findAll({
-            where: {userId: 'id'},
-            attributes: ['nNf', 'emissionDate', 'orderStatusBuyer', 'value'],
+            where: {userId: id},
+            attributes: ['nNf', 'emissionDate', 'orderStatusBuyer', 'value', 'userId'],
             includes: [{
                 model: provider,
                 as: 'providers',
@@ -23,5 +24,7 @@ const findById = async (id) => {
 
     
 }
+
+
 
 module.exports = {findById};

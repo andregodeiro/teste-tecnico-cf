@@ -1,9 +1,9 @@
-const UserRepository = require('../models/users.js');
+const UserRepository = require('../services/usersService');
 
-async function findAll(req, resp) {
+const findAll = async (req, resp) => {
     try {
         const users = await UserRepository.findAll();
-    resp.json(users);
+        resp.status(200).json({payload: users, message: 'Sucesso'});
     } catch (error) {
         console.log(error);
         return resp.status(500).json("Erro no servidor")
