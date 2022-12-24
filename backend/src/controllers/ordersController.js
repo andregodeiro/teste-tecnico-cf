@@ -1,14 +1,14 @@
-import OrderRepository from '../models/orders.js'
+import ordersService from '../services/ordersService';
 
-
-async function findAll(req, resp) {
+const findById = async (req, resp) => {
+    const id = req.params;
     try {
-        const orders = await OrderRepository.findAll();
-        resp.json(orders);
+        const orders = await ordersService.findById();
+        resp.json(orders)
     } catch (error) {
         console.log(error);
         return resp.status(500).json("Erro no servidor")
     }
-};
+}
 
-export default {findAll};
+export default {findById}

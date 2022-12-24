@@ -8,7 +8,7 @@ routes.get('/', (res, resp) => {
     return res.json("OK!")
 });
 
-routes.get('/orders', orders.findAll)
+routes.get('/orders/:id', orders.findById)
 routes.get('/users', users.findAll)
 
 
