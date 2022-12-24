@@ -27,4 +27,16 @@ const Provider = database.define("provider", {
     situationDate: DataTypes.STRING,
     cnpjId: {trype: DataTypes.INTEGER, foreignKey: true},
     email: DataTypes.STRING
-})
+});
+
+    Provider.associate((models) => {
+    Provider.hasMany(models.order, {
+        foreignKey:'providerId', as: 'orders'
+    });
+    Provider.belongsTo(models.cnpj, {
+        foreignKey:'providerId', as: 'cnpj'
+    });
+    return Provider;
+});
+
+export default Provider;

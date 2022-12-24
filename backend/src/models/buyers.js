@@ -1,7 +1,7 @@
 import {DataTypes, Sequelize} from 'sequelize';
 import database from '../config/db-config';
 
-export default database.define("buyer", {
+const Buyer = database.define("buyer", {
     name: DataTypes.STRING,
     tradingName: DataTypes.STRING,
     cashforceTax: DataTypes.STRING,
@@ -25,4 +25,16 @@ export default database.define("buyer", {
     email: DataTypes.STRING,
     confirm: DataTypes.STRING,
 
-} );
+});
+
+    Buyer.associate((models) => {
+        Buyer.hasMany(models.order, {
+            foreignKey:'buyerId', as: 'orders'
+        });
+        Buyer.belongsTo(models.cnpj, {
+            foreignKey:'buyerId', as: 'cnpj'
+        });
+        return Buyer;
+    });
+
+    export default Buyer;
