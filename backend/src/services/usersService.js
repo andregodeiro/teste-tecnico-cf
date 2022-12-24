@@ -1,7 +1,7 @@
 import UserRepository from '../models/users.js';
 
-function findAll(req, resp) {
-    UserRepository.findAll().then((users) => resp.json(users));
+const findAll = async (req, resp) => {
+    await UserRepository.findAll().then((users) => resp.json(users));
 }
 
-export default findAll;
+export default {findAll};
