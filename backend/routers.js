@@ -1,6 +1,6 @@
-import express from 'express';
-import orders from './src/controllers/ordersController.js';
-import users from './src/controllers/usersController.js';
+const express = require('express');
+const orders = require('./src/controllers/ordersController.js');
+
 
 const routes = express.Router();
 
@@ -9,7 +9,5 @@ routes.get('/', (res, resp) => {
 });
 
 routes.get('/orders/:id', orders.findById)
-routes.get('/users', users.findAll)
 
-
-export { routes as default };
+module.exports = { routes };

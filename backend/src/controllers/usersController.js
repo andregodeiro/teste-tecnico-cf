@@ -1,4 +1,4 @@
-import UserRepository from '../models/users.js';
+const UserRepository = require('../models/users.js');
 
 async function findAll(req, resp) {
     try {
@@ -10,4 +10,4 @@ async function findAll(req, resp) {
     }
 };
 
-export default {findAll};
+module.exports = {findAll};

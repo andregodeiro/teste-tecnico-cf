@@ -1,6 +1,6 @@
-import express from 'express';
-import routers from './routers.js';
-import database from './src/config/db-config.js';
+const express = require('express');
+const routers = require('./routers.js');
+const database = require('./src/config/db-config.js');
 
 const app = express();
 

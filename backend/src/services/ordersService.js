@@ -1,4 +1,4 @@
-import {order, provider, buyer, cnpj} from '../models';
+const {order, provider, buyer} = require('../models');
 
 const findById = async (id) => {
     try {
@@ -7,9 +7,11 @@ const findById = async (id) => {
             attributes: ['nNf', 'emissionDate', 'orderStatusBuyer', 'value'],
             includes: [{
                 model: provider,
+                as: 'providers',
                 attributes: ['name']
             }, {
                 model: buyer,
+                as: 'buyers',
                 attributes: ['name']
             }]
     });
@@ -22,4 +24,4 @@ const findById = async (id) => {
     
 }
 
-export default findById;
+module.exports = {findById};

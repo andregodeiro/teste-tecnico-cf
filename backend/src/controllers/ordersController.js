@@ -1,9 +1,9 @@
-import ordersService from '../services/ordersService';
+const OrdersService = require('../services/ordersService');
 
 const findById = async (req, resp) => {
     const id = req.params;
     try {
-        const orders = await ordersService.findById();
+        const orders = await OrdersService.findById();
         resp.json(orders)
     } catch (error) {
         console.log(error);
@@ -11,4 +11,4 @@ const findById = async (req, resp) => {
     }
 }
 
-export default {findById}
+module.exports = {findById}

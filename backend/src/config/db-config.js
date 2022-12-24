@@ -1,16 +1,25 @@
-import { Sequelize } from 'sequelize';
-import dotenv from 'dotenv/config.js';
+require('dotenv').config();
 
-
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
-const dbHost = process.env.DB_HOST;
-const dbName = process.env.DB_NAME;
-
-
-const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
+module.exports = {
+  development: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.HOST,
     dialect: 'mysql',
-    host: dbHost,
-});
-
-export default sequelize;
+  },
+  test: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.HOST,
+    dialect: 'mysql',
+  },
+  production: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.HOST,
+    dialect: 'mysql',
+  },
+};
