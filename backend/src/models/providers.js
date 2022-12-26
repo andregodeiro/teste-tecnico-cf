@@ -33,7 +33,7 @@ const createProvider = (sequelize, DataTypes) => {
             foreignKey:'providerId', as: 'orders'
         });
         Provider.belongsTo(models.cnpj, {
-            foreignKey:'providerId', as: 'cnpj'
+            foreignKey:'cnpjId', as: 'cnpj'
         });
     };
     
