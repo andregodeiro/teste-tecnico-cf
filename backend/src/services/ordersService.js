@@ -1,4 +1,4 @@
-const {order, provider, buyer} = require('../models');
+const {order, provider, buyer, cnpj} = require('../models');
 
 const findById = async (id) => {
   console.log(id)
@@ -6,10 +6,11 @@ const findById = async (id) => {
         const orders = await order.findAll({
             where: {userId: id},
             attributes: ['nNf', 'emissionDate', 'orderStatusBuyer', 'value', 'userId'],
-            includes: [{
+            include: [{
                 model: provider,
                 as: 'providers',
-                attributes: ['name']
+                attributes: ['name'],
+                include: [{model: cnpj, as: 'cnpj', attributes: ['cnpj']}],
             }, {
                 model: buyer,
                 as: 'buyers',
