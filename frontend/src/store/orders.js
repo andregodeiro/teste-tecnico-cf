@@ -1,7 +1,8 @@
 export default {
-  state () {
-    return {
-      orders: []
+    state () {
+      return {
+        orders: []
+      }
     }
   }
-}
+  
