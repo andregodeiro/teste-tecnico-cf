@@ -1,12 +1,14 @@
-import express from 'express';
-import routers from './routers.js';
-import database from './src/config/db-config.js';
+const express = require('express');
+const routers = require('./routers.js');
+const database = require('./src/config/config.js');
+require('dotenv').config();
+
+const DB_PORT = process.env.DB_PORT;
 
 const app = express();
 
 app.use(express.json());
 app.use(routers);
 
-database.sync(() => console.log(`DataBase connected: ${process.env.DB_NAME}`));
 
-app.listen(3030, () => console.log("Server running in Port 3030!"));
+app.listen(DB_PORT, () => console.log("Server running in Port 3030!"));

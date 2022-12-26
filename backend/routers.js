@@ -1,15 +1,13 @@
-import express from 'express';
-import orders from './src/controllers/ordersController.js';
-import users from './src/controllers/usersController.js';
+const express = require('express');
+const orders = require('./src/controllers/ordersController.js');
+const users = require('./src/controllers/usersController.js')
 
-const routes = express.Router();
+const routers = express.Router();
 
-routes.get('/', (res, resp) => {
+routers.get('/', (res, resp) => {
     return res.json("OK!")
 });
 
-routes.get('/orders', orders.findAll)
-routes.get('/users', users.findAll)
-
-
-export { routes as default };
+routers.get('/users', users.findAll);
+routers.get('/orders/:id', orders.findById);
+module.exports = routers;
