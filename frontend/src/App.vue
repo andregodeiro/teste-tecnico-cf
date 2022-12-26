@@ -1,11 +1,11 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Orders from './components/pages/Orders.vue'
 </script>
 
 <template>
   <header>
    
-      <HelloWorld msg="You did it!" />
+      <Orders/>
 
   </header>
 

@@ -1,8 +1,5 @@
 export default {
-    state () {
-      return {
-        orders: []
-      }
-    }
+    state:  {
+      ordersData:[]
   }
-  
+}

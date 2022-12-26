@@ -1,6 +1,6 @@
 export default {
-    getOrders (state, payload) {
-      state.orders.orders = payload
+    setOrders (state, orders) {
+      state.ordersData = orders;
     }
   }
   

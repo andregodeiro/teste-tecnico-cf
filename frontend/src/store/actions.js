@@ -1,9 +1,15 @@
-import fetchData from '../api/fetchData.js'
+import axios from 'axios'
+import fetchData from '../api/fetchData';
+
 
 export default {
-  async getOrders ({commit}) {
-    const data = await fetchData(1)
-
-    commit('getorders', data)
+    async fetchOrders({commit}) {
+      try {
+    const data = await axios.get("http://localhost:3030/orders/1");
+    commit('setOrders', data)
+  } catch (error) {
+    alert(error);
+    console.log(error);
   }
+  } 
 }
