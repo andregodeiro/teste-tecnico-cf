@@ -70,6 +70,11 @@ export default {
     margin-left: 25px;
 }
 
+.menu-item-icon {
+    display: flex;
+    align-items: center;
+}
+
 .menu-item-text {
     font-size: 14px;
     font-weight: 500;

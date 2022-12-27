@@ -188,7 +188,8 @@ import { useStore } from 'vuex';
 .conteudo-tabela {
     border: solid 1px #DFE2EB;
     border-radius: 6px;
-    padding: 15px;
+    height: 48px;
+    padding: 0px 5px 0px 15px;
     display: grid;
     grid-template-columns: repeat(7,1fr);
     align-items: center;
