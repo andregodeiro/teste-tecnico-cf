@@ -37,13 +37,13 @@
                                 <td>{{order.providers.name}}</td>
                             </div>
                             <div>
-                                <td>{{order.emissionDate}}</td>
+                                <td>{{dateConversion(order.emissionDate)}}</td>
                             </div>
                             <div>
-                                <td class="linha-verde">{{order.value}}</td>
+                                <td class="linha-verde">{{brlConversion(order.value)}}</td>
                             </div>
                             <div>
-                                <td class="linha-verde">{{order.orderStatusBuyer}}</td>
+                                <td class="linha-verde">{{statusBuyer(order.orderStatusBuyer)}}</td>
                             </div>
                             </div>
                         </tr>
@@ -70,6 +70,36 @@ import { useStore } from 'vuex';
         store.dispatch("fetchOrders")
     });
 
+
+    function statusBuyer(property) {
+        const status = {
+        0:'Pendente de confirmação',
+        1:'Pedido confirmado',
+        2:'Não reconhece o pedido',
+        3:'Mercadoria não recebida',
+        4:'Recebida com avaria',
+        5:'Devolvida',
+        6:'Recebida com devolução parcial', 
+        7:'Recebida e confirmada',
+        8:'Pagamento Autorizado'
+        };
+        return status[property]
+    }
+
+    function dateConversion(value) {
+        const date = new Date(value);
+        const convertedDate = date.toLocaleDateString('pt-BR');
+        return convertedDate;
+    }
+
+    function brlConversion(value) {
+        const brl = new Intl.NumberFormat('pt-BR', {
+            style: 'currency', 
+            currency: 'BRL'
+        }).format(value)
+        return brl;
+        
+    }
 </script>
 
 <style>
@@ -117,8 +147,6 @@ import { useStore } from 'vuex';
     color: #727D94;
 }
 
-.tabela-container {
-}
 
 
 .header-tabela {
