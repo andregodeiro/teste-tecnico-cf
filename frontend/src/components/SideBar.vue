@@ -32,7 +32,7 @@ export default {
 
 .sidebar-container {
     height: 100vh;
-    width: 288px;
+    width: 19vw;
     margin-left: 0px;
     margin-top: 0px;
     background-color: #FBFDFE;

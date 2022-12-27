@@ -29,7 +29,6 @@ export default {
 
 .page-container{
     display: flex;
-    margin: 0 auto;
 }
 
 </style>

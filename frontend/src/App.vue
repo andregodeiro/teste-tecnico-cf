@@ -21,6 +21,7 @@ import Orders from './pages/Orders.vue'
   margin: 0px;
   padding: 0px;
   font-family: 'DM sans', sans-serif;
+  box-sizing: border-box;
 }
 
 body {

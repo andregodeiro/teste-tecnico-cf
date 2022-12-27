@@ -11,7 +11,7 @@
         
 
         <div class="tabela-container">
-            <table>
+            <table class="tabela">
                 <div class="header-tabela">
                     <tr>
                         <td>NOTA FISCAL</td>
@@ -105,6 +105,7 @@ import { useStore } from 'vuex';
 <style>
 
 .main-container {
+    width: 81vw;
     display: flex;
     flex-direction: column;
     border-radius:15px 0px 0px 15px;
@@ -112,7 +113,7 @@ import { useStore } from 'vuex';
 }
 
 .header-sistema {
-    height: 64px;
+    height: 4.5vw;
     color: #FFFF;
     border-bottom:1px solid #DFE2EB ;
 
@@ -147,7 +148,13 @@ import { useStore } from 'vuex';
     color: #727D94;
 }
 
+.tabela {
+    display: table;
+}
 
+.tabela-container {
+    padding: 22px 47px 0px 48px;
+}
 
 .header-tabela {
     font-size: 12px;
@@ -156,9 +163,9 @@ import { useStore } from 'vuex';
 
 .header-tabela tr {
     display: flex;
-    justify-content: space-around;
-    width: 1177px;
+    justify-content:space-around;   
 }
+
 
 .conteudo-tabela-container {
     display: flex;
@@ -172,19 +179,22 @@ import { useStore } from 'vuex';
     display: flex;
     gap: 10px;
     padding: 15px;
-    width: 1177px;
     justify-content: space-between;
+    align-items: center;
    
 }
 
 .item-tabela {
+    width: 100%;
     display: flex;
-    gap: 20px;
+    gap: 50px;
 }
 
 .linha-tabela tr {
     display: flex;
+
 }
+
 
 .linha-verde {
     color: #00AD8C;
