@@ -1,5 +1,5 @@
 <script setup>
-import Orders from './components/pages/Orders.vue'
+import Orders from './pages/Orders.vue'
 </script>
 
 <template>
