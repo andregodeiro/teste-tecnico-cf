@@ -1,32 +1,33 @@
 <template>
-    <div class="main-container">
+    <div class="page-container">
 
-        <div v-for='(order, i) in orders' :key='i'>
-            {{ order }}
-        </div>
-
+        <SideBar  />
+        <Reicepts />
+       
     </div>
 </template>
 
-<script setup>
-import {computed, onMounted }from 'vue'
-import { useStore } from 'vuex';
+<script>
 
+import SideBar from '../components/SideBar.vue'
+import Reicepts from '../components/Receipts.vue'
 
-    const store = useStore();
-
-    const orders = computed(() => {
-        return store.state.ordersData
-    });
-    onMounted(() => {
-        store.dispatch("fetchOrders")
-    });
+export default {
+    name: 'Orders',
+    components: {
+        SideBar,
+        Reicepts
+    },
+    data() {
+        return{}
+    }
+}
 
 </script>
 
 <style>
 
-.main-container{
+.page-container{
     display: flex;
 }
 

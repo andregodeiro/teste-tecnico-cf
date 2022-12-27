@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar-container">
         <div class="header-logo">
-
+            <p>HELLO</p>
         </div>
         <div class="menu">
 
@@ -19,5 +19,7 @@ export default {
 </script>
 
 <style>
+
+
 
 </style>
