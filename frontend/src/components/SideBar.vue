@@ -35,12 +35,10 @@ export default {
     width: 288px;
     margin-left: 0px;
     margin-top: 0px;
-    border: 1px solid red;
     background-color: #FBFDFE;
 }
 
 .header-logo {
-    border: 1px solid blue;
     height: 80px;
     width: 288px;
     display: flex;
@@ -52,7 +50,6 @@ export default {
 }
 
 .menu {
-    border: 1px solid purple;
     height: 64px;
     width: 288px;
     display: flex;

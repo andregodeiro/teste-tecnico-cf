@@ -15,10 +15,17 @@ import Orders from './pages/Orders.vue'
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 *{
   margin: 0px;
-  padding: 0px
+  padding: 0px;
+  font-family: 'DM sans', sans-serif;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
 }
 
 @media (min-width: 1024px) {
