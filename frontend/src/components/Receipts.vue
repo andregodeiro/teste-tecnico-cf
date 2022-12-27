@@ -10,9 +10,8 @@
                 <p>Notas fiscais</p>
             </div>
                 <p class="page-header-description">Visualize as notas fiscais que você tem.</p>
-      </div>
+        </div>
 
-       
             <table class="tabela">
 
                 <thead>
@@ -24,32 +23,42 @@
                         <th class="item-header">EMISSÃO</th>
                         <th class="item-header">VALOR</th>
                         <th class="item-header">STATUS</th>
+                        <th class="item-header">  </th>
                 </tr>
 
                 </thead>
 
                 <tbody>
                 <div class="conteudo-tabela-container">
-                <tr class="conteudo-tabela" v-for='(order, i) in orders' :key='i'>
-                    
-                    
-                           
+                <tr class="conteudo-tabela" v-for='(order, i) in orders' :key='i'>                                        
                                 
-                                <td class="row-1">
+                                <td>
                                 <div class="item-tabela">{{order.nNf}}</div> 
                                 </td>
 
-                                <td class="itens-centrais">           
-                                <div class="item-tabela">{{order.buyers.name}}</div>                                                     
+                                <td>           
+                                <div class="item-tabela">{{order.buyers.name}}</div>
+                                </td> 
+                                
+                                <td> 
                                 <div class="item-tabela">{{order.providers.name}}</div>                
+                                </td>
+                                
+                                <td>   
                                 <div class="item-tabela">{{dateConversion(order.emissionDate)}}</div>                                                  
+                                </td>
+                                
+                                <td> 
                                 <div class="item-tabela green" >{{brlConversion(order.value)}}</div>
+                                </td>
+
+                                <td>                      
                                 <div class="item-tabela green" id="status">{{statusBuyer(order.orderStatusBuyer)}}</div>
                                 </td>
 
-                    <td class="cedente-btn">
-                    <button>Dados do cedente</button>
-                    </td>
+                                <td class="cedente-btn">
+                                <button>Dados do cedente</button>
+                                </td>
                 </tr>
                 </div>
                 </tbody>
@@ -150,20 +159,17 @@ import { useStore } from 'vuex';
     margin: 5px 0px 0px 0px;
 }
 
+
 .tabela {
     padding: 22px 47px 0px 48px;
 }
 
 
 .header-tabela {
-    padding: 16px;
+    padding: 15px;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-template-columns: repeat(7, 1fr);
     justify-items: left;
-    
 }
 
 .item-header {
@@ -180,37 +186,18 @@ import { useStore } from 'vuex';
 }
 
 .conteudo-tabela {
-    width: 71vw;
     border: solid 1px #DFE2EB;
     border-radius: 6px;
     padding: 15px;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 100px;
-    grid-row-gap: 0px;  
-    justify-items: left;
+    grid-template-columns: repeat(7,1fr);
     align-items: center;
 }
 
-.row-1{
-    grid-area: 1 / 1 / 2 / 2;
-}
 
 .item-tabela {
     font-size: 14px;
     font-weight: 500;
-}
-
-
-.itens-centrais {
-    display: flex;
-    justify-content: space-between;
-    grid-area: 1 / 2 / 2 / 7;
-}
-
-.itens-centrais .item-tabela {
-    margin-left: 24px;
 }
 
 
@@ -234,7 +221,6 @@ button {
     border-radius: 24px;
     background-color: #ffff;
     cursor: pointer;
-    grid-area: 1 / 7 / 2 / 8;
 }
 
 
