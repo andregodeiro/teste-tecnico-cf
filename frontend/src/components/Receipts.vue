@@ -13,43 +13,47 @@
       </div>
 
        
-            <div class="tabela">
+            <table class="tabela">
 
-                <div class="header-tabela">
-                        <div class="item-header">NOTA FISCAL</div>
-                        <div class="item-header">SACADO</div>
-                        <div class="item-header">CEDENTE</div>
-                        <div class="item-header">EMISSÃO</div>
-                        <div class="item-header">VALOR</div>
-                        <div class="item-header">STATUS</div>
-                </div>
+                <thead>
 
+                <tr class="header-tabela">
+                        <th class="item-header">NOTA FISCAL</th>
+                        <th class="item-header">SACADO</th>
+                        <th class="item-header">CEDENTE</th>
+                        <th class="item-header">EMISSÃO</th>
+                        <th class="item-header">VALOR</th>
+                        <th class="item-header">STATUS</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
                 <div class="conteudo-tabela-container">
-                <div class="conteudo-tabela" v-for='(order, i) in orders' :key='i'>
+                <tr class="conteudo-tabela" v-for='(order, i) in orders' :key='i'>
                     
                     
-                            <div class="item-tabela-container">
+                           
                                 
-                                <div>
+                                <td class="row-1">
                                 <div class="item-tabela">{{order.nNf}}</div> 
-                                </div>
+                                </td>
 
-                                <div class="itens-centrais">           
+                                <td class="itens-centrais">           
                                 <div class="item-tabela">{{order.buyers.name}}</div>                                                     
                                 <div class="item-tabela">{{order.providers.name}}</div>                
                                 <div class="item-tabela">{{dateConversion(order.emissionDate)}}</div>                                                  
                                 <div class="item-tabela green" >{{brlConversion(order.value)}}</div>
                                 <div class="item-tabela green" id="status">{{statusBuyer(order.orderStatusBuyer)}}</div>
-                                </div>
+                                </td>
 
-                          
-                            </div>
-                    <div class="cedente-btn">
+                    <td class="cedente-btn">
                     <button>Dados do cedente</button>
-                    </div>
+                    </td>
+                </tr>
                 </div>
-                </div>
-            </div>
+                </tbody>
+            </table>
     </div>
 </template>
 
@@ -154,15 +158,15 @@ import { useStore } from 'vuex';
 .header-tabela {
     padding: 16px;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    justify-items: left;
     
 }
 
 .item-header {
-    text-align: start;
     font-size: 12px;
     font-weight: 700;
     color: #A1A8B8;
@@ -176,21 +180,21 @@ import { useStore } from 'vuex';
 }
 
 .conteudo-tabela {
-    width: 75vw;
+    width: 71vw;
     border: solid 1px #DFE2EB;
     border-radius: 6px;
-    gap: 10px;
     padding: 15px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 100px;
+    grid-row-gap: 0px;  
+    justify-items: left;
     align-items: center;
- 
 }
 
-.item-tabela-container {
-    width: 100%;
-    gap: 100px;
-    display: flex;
-    align-items: center;
+.row-1{
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .item-tabela {
@@ -201,9 +205,14 @@ import { useStore } from 'vuex';
 
 .itens-centrais {
     display: flex;
-    align-items: center;
-    gap: 50px;
+    justify-content: space-between;
+    grid-area: 1 / 2 / 2 / 7;
 }
+
+.itens-centrais .item-tabela {
+    margin-left: 24px;
+}
+
 
 .green {
     color: #00AD8C;
@@ -225,8 +234,7 @@ button {
     border-radius: 24px;
     background-color: #ffff;
     cursor: pointer;
-
-
+    grid-area: 1 / 7 / 2 / 8;
 }
 
 

@@ -8,7 +8,7 @@
             <div class="menu-item">
             
                 <div class="menu-item-icon">
-                    <img src="../assets/icon-handshake.svg" alt="Ícone aperto de mãos">
+                    <img src="../assets/icon-handshake-green.svg" alt="Ícone aperto de mãos">
                 </div>
                 <div class="menu-item-text">
                     <p>Notas fiscais</p>
