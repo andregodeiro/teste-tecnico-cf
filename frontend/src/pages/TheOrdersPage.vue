@@ -1,22 +1,22 @@
 <template>
     <div class="page-container">
 
-        <SideBar  />
-        <Reicepts />
+        <MySideBar  />
+        <MyReicepts />
        
     </div>
 </template>
 
 <script>
 
-import SideBar from '../components/SideBar.vue'
-import Reicepts from '../components/Receipts.vue'
+import MySideBar from '../components/MySideBar.vue'
+import MyReicepts from '../components/MyReceipts.vue'
 
 export default {
     name: 'Orders',
     components: {
-        SideBar,
-        Reicepts
+        MySideBar,
+        MyReicepts
     },
     data() {
         return{}

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import fetchData from '../api/fetchData';
+
 
 
 export default {
