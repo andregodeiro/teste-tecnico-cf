@@ -1,11 +1,11 @@
 <script setup>
-import Orders from './pages/Orders.vue'
+import TheOrdersPage from './pages/TheOrdersPage.vue'
 </script>
 
 <template>
   <header class="header-container">
    
-      <Orders/>
+      <TheOrdersPage/>
 
   </header>
 
