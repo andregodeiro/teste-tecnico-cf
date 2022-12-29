@@ -1,15 +1,15 @@
 <p align="center"><a href="https://imgur.com/mV8Bhni"><img src="https://i.imgur.com/mV8Bhni.png" title="source: imgur.com" /></a></p>
 
-## Descrição do projeto
+## 💾 Descrição do projeto
 
 Este projeto foi desenvolvido em duas fases. A primeira consiste em criar uma API em Node.js, aliado ao express e sequelize, a qual se conectará a um banco de dados MySQL. A segunda fase trás o desafio de replicar uma tela desenhada no Figma, utilizando Vue.js, onde serão realizadas as consultas à API criada e serão exibidos os seus dados.
 
-## Requisitos da aplicação
+## 🌐 Requisitos da aplicação
 
 - [Node.js](https://nodejs.org/en/)
 - [Vue.js](https://vuejs.org/)
 
-## Estrutura
+## 🏗️ Estrutura
 
 ```bash
 teste-tecnico/
@@ -57,16 +57,16 @@ teste-tecnico/
 │       ├── pages
 │       │   └── TheOrdersPage.vue
 │       ├── store
-│       │   ├── modules
-│       │   │   └── orders.js
+│       │   ├── orders.js
 │       │   ├── actions.js
+│       │   ├── getters.js
 │       │   ├── mutations.js
 │       │   └── index.js
 
 ```
 
 
-## Instalação
+## 💻 Instalação
 
 A aplicação possui dois componentes, o FrontEnd desenvolvido em [Vue.js](https://vuejs.org/) e o BackEnd desenvolvido em [Node.js](https://nodejs.org/en/).
 
