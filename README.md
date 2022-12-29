@@ -10,7 +10,7 @@
 
 ## 💾 Descrição do projeto
 
-Este projeto foi desenvolvido em duas fases. A primeira consiste em criar uma API em Node.js, aliado ao express e sequelize, a qual se conectará a um banco de dados MySQL. A segunda fase trás o desafio de replicar uma tela desenhada no Figma, utilizando Vue.js, onde serão realizadas as consultas à API criada e serão exibidos os seus dados.
+Este projeto foi desenvolvido em duas fases. A primeira consiste em criar uma API em Node.js, aliado ao express e sequelize, a qual se conectará a um banco de dados MySQL. A segunda fase traz o desafio de replicar uma tela desenhada no Figma, utilizando Vue.js, onde serão realizadas as consultas à API criada e serão exibidos os seus dados.
 
 ## 🌐 Requisitos da aplicação
 
