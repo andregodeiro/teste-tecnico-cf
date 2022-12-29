@@ -44,7 +44,7 @@ teste-tecnico/
 │       ├── services
 │       │   ├── ordersService.js
 │       │   └── usersService.js
-├── teste-frontend # interface que irá consumir os dados da nossa API
+├── frontend # interface que irá consumir os dados da nossa API
 │   ├── package.json # principal componente da aplicação
 │   ├── package-lock.json # arquivo responsável por otimizar a instalação em outros ambientes
 │   ├── index.html
