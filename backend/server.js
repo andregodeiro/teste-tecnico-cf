@@ -13,4 +13,4 @@ app.use(express.json());
 app.use(routers);
 
 
-app.listen(DB_PORT, () => console.log("Server running in Port 3030!"));
+app.listen(DB_PORT, () => console.log(`Server running in Port ${DB_PORT}!`));
