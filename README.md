@@ -92,7 +92,7 @@ Para que tudo funcione, é necessário instalar primeiramente o BackEnd, pois as
         -  DB_USER='user de acesso ao banco'
         -  DB_PASSWORD='insira o password de acesso ao banco'
         -  DB_NAME=cashforce_v3 //exemplo - nome do schema
-        -  PORT=3000 //exemplo - porta que a aplicação backend irá rodar
+        -  DB_PORT=3030 // porta padrão. caso alterada, alterar também no módulo de frontend, no caminho `./teste-tecnico-cf/frontend/src/store/actions.js`
 
 #### Instalação do FrontEnd
 
